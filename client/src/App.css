@@ -1,0 +1,21 @@
+body{
+  margin: 0;
+}
+#App{
+  grid-template-columns: 150px auto;
+  grid-template-rows: 100px auto;
+  display: grid;
+  min-height: 100vh;
+}
+#Header{
+  grid-column:  1 / span 2;
+  grid-row: 1 / span 1;
+}
+#SideBar{
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+#MainContent{
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
