@@ -1,31 +1,32 @@
 body{
   margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 #App{
-  grid-template-columns: 150px auto;
-  grid-template-rows: 50px 100px auto;
+  grid-template-columns: 200px 200px auto;
+  grid-template-rows: 100px 150px auto;
   display: grid;
   min-height: 100vh;
 }
 
 #Header{
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
   grid-row: 1 / span 2;
-  padding: 20px;
+  padding: 10px;
 }
 #logo{
-  height: 100%;
-  width: 100%;
+  margin-top: 50px;
+  height: 180px;
+  width: 180px;
   display: inline-block;
-  background-image: url("/images/99.png");
+  background-image: url("/images/logoyaya.svg");
   background-position: center;
-  background-size: 130px;
+  background-size: 180px;
 }
 
 #SearchBar{
-  grid-column:  2 / span 1;
   grid-row: 1 / span 1;
-  padding: 10px 10px 10px 110px;
+  padding: 30px 10px 10px 110px;
 }
 #searchicon{
   position: absolute;
@@ -44,26 +45,48 @@ body{
 
 
 #SideBar{
-  grid-column: 1 / span 1;
+  grid-column: 2 / span 1;
   grid-row: 3 / span 1;
 }
-#SideBar > a{
+.sidebarposts{
   display: block;
+  margin: 20px;
+  font-weight: 600;
+  font-size: 25px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 4px;
+}
+#SideBar > .sidebarposts:hover{
+  color: red;
+}
+
+#MainContentContainer{
+  grid-column: 3 / span 1;
+}
+#MainContent{
+  grid-row: 2 / span 2;
+  padding: 80px 130px 80px 130px;
+}
+#MainContent > a{
+  text-decoration: none;
+}
+#MainContent > a > #post{
+  border: 1px solid transparent;
   padding: 20px;
 }
-
-
-#MainContent{
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 2;
-  padding: 100px 150px 100px 150px;
+#MainContent > a > #post:hover{
+  color: red;
+  border: 1px solid lightgray;
 }
-.fadeopacity{
-  opacity: 0.5;
+.fadeoutopacity{
+  opacity: 1;
   transition: 1s opacity;
 }
-.fadein{
+.fadeinopacity{
   opacity: 1;
+  transition: 1s opacity;
 }
 #title{
   text-align: justify;
@@ -75,22 +98,24 @@ body{
   font-size: 20px;
 }
 
-#Test{
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 2;
-  padding: 100px 150px 100px 150px;
+
+.contactme{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  margin-top: 100px;
+}
+.contactmecontents{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 200;
+  transition: 0.1s all ease-in;
+  color: black;
+  margin: 10px 0 10px 0;
 }
 
-
-#Contact{
-  padding: 100px 150px 100px 150px;
-}
-#phone{
-  text-align: justify;
-  font-size: 20px;
-  padding-bottom: 20px;
-}
-#email{
-  text-align: justify;
-  font-size: 20px;
+.contactmecontents:hover{
+  color: aqua;
 }
