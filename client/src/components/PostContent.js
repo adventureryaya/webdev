@@ -15,13 +15,13 @@ class PostContent extends Component {
   }
   render() {
     return (
-      <div id="MainContentContainer">
-        <SearchBar></SearchBar>
-        <div id="MainContent">
+      <div id="PostContentContainer">
+        <div id="PostContent">
           {this.state.data.map((item, i) =>
             <div key={i} id="post">
-              <div id="title">{item.title}</div>
-              <div id="maincontent">{item.content}</div>
+              <div id="posttitle">{item.title}</div>
+              <div id="postdate">Posted {item.timestamp}</div>
+              <div id="postcontent">{item.content}</div>
             </div>
           )}
         </div>

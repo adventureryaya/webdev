@@ -4,7 +4,9 @@ class Header extends Component {
   render() {
     return (
       <div id="Header">
+        <div id="logocontainer">
         <NavLink to="/" id="logo"></NavLink>
+        </div>
       </div>
     );
   }

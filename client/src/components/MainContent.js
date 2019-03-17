@@ -41,12 +41,12 @@ class MainContent extends Component {
       }));
     }
   }
-  handleSearch(e, searchstring){
+  handleSearch(e, searchstring) {
     e.preventDefault();
     let filterdata = [];
     this.state.data.forEach(element => {
-      let filteredstring = element.title.search(searchstring);
-      if(filteredstring !== -1){
+      let filteredstring = element.title.toUpperCase().search(searchstring.toUpperCase());
+      if (filteredstring !== -1) {
         filterdata.push(element);
       }
     });
@@ -58,16 +58,20 @@ class MainContent extends Component {
     return (
       <div id="MainContentContainer">
         <SearchBar handleSearch={this.handleSearch.bind(this)}></SearchBar>
-        <div id="MainContent">
-          {this.state.filtereddata.map((item, i) =>
-            <NavLink key={i} to={`/posts/${item.category}/${item.post_id}`}>
-              <div id="post">
-                <div id="title">{item.title}</div>
-                <div id="maincontent">{item.content}</div>
-                <div id="maincontenttimestamp">{item.timestamp}</div>
+        <div id="SubMainContentContainer">
+          <div id="MainContent">
+            {this.state.filtereddata.map((item, i) =>
+              <div id="postwrapper" key={i}>
+              <NavLink to={`/posts/${item.category}/${item.post_id}`}>
+                <div id="post">
+                  <div id="title">{item.title}</div>
+                  <div id="maincontent">{item.previewcontent}</div>
+                  <div id="maincontenttimestamp">{item.timestamp}</div>
+                </div>
+              </NavLink>
               </div>
-            </NavLink>
-          )}
+            )}
+          </div>
         </div>
       </div>
     );
